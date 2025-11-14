@@ -3,6 +3,6 @@
   "compilerOptions": {
     "types": ["node", "vite/client", "@types/react/experimental"]
   },
-  "include": ["src", "vite.config.ts"],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

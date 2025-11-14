@@ -47,7 +47,7 @@ function toHexString(value: unknown): `0x${string}` {
     }
   }
   if (typeof value === "bigint") {
-    return ethers.hexlify(value) as `0x${string}`;
+    return `0x${value.toString(16)}` as `0x${string}`;
   }
 
   console.error("Cannot convert to hex string:", value);
@@ -326,7 +326,7 @@ export default function App() {
           if (checkAttempt < 3) {
             await new Promise(resolve => setTimeout(resolve, 2000));
           }
-        } catch (error) {
+        } catch {
           // Ignore check errors and continue waiting
         }
       }
@@ -538,7 +538,6 @@ export default function App() {
 
       for (let decryptAttempt = 1; decryptAttempt <= decryptMaxRetries; decryptAttempt++) {
         try {
-          const delayMs = Math.min(1000 * Math.pow(1.3, decryptAttempt - 1), 8000); // Maximum 8 seconds
           setDecryptionStatus(`Decrypting responses... (attempt ${decryptAttempt}/${decryptMaxRetries})`);
 
           const result = await instance.userDecrypt(
