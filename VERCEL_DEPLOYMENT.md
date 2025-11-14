@@ -27,20 +27,21 @@ This guide provides step-by-step instructions for deploying the Persona Shard FH
 ### Step 2: Configure Project Settings
 
 #### Basic Configuration
-- **Framework Preset**: `Other` (Vite)
-- **Root Directory**: `./frontend`
-- **Build Command**: `npm run build`
-- **Output Directory**: `dist`
-- **Install Command**: `npm install`
+- **Framework Preset**: `Vite` (or `Other` if Vite is not auto-detected)
+- **Root Directory**: Leave empty (configured in vercel.json)
+- **Build Command**: Leave empty (configured in vercel.json)
+- **Output Directory**: Leave empty (configured in vercel.json)
+- **Install Command**: Leave empty (configured in vercel.json)
 
 #### Advanced Configuration
 The `vercel.json` file handles these settings automatically:
 
 ```json
 {
-  "buildCommand": "cd frontend && npm run build",
-  "outputDirectory": "frontend/dist",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "installCommand": "npm install",
+  "rootDirectory": "frontend",
   "framework": null,
   "rewrites": [
     {
