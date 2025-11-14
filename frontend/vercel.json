@@ -1,5 +1,5 @@
 {
-  "buildCommand": "rm -rf node_modules package-lock.json && npm install && ROLLUP_SKIP_NATIVE=true npx vite build",
+  "buildCommand": "rm -rf node_modules package-lock.json && npm install && export ROLLUP_SKIP_NATIVE=true && npx vite build",
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": null,
