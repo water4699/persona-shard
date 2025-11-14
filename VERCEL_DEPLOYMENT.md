@@ -38,10 +38,9 @@ The `vercel.json` file handles these settings automatically:
 
 ```json
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
+  "buildCommand": "npm run build --prefix frontend",
+  "outputDirectory": "frontend/dist",
   "installCommand": "npm install",
-  "rootDirectory": "frontend",
   "framework": null,
   "rewrites": [
     {
