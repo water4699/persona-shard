@@ -43,6 +43,11 @@
     "vite": "^7.1.6"
   },
   "overrides": {
-    "@rollup/rollup-linux-x64-gnu": "npm:@rollup/rollup-linux-x64-musl@4.34.8"
+    "@rollup/rollup-linux-x64-gnu": "npm:@rollup/rollup-linux-x64-musl@4.34.8",
+    "rollup": "^4.34.8"
+  },
+  "resolutions": {
+    "@rollup/rollup-linux-x64-gnu": "npm:@rollup/rollup-linux-x64-musl@4.34.8",
+    "rollup": "^4.34.8"
   }
 }
