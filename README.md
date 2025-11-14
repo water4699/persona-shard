@@ -131,7 +131,7 @@ The `vercel.json` file in the root directory configures:
 
 ```json
 {
-  "buildCommand": "npm run build --prefix frontend",
+  "buildCommand": "bash -c 'cd frontend && npm run build'",
   "outputDirectory": "frontend/dist",
   "installCommand": "npm install",
   "framework": null,
@@ -146,7 +146,7 @@ The `vercel.json` file in the root directory configures:
 
 This tells Vercel:
 - Install dependencies in the root directory
-- Run build command in the frontend directory using `--prefix`
+- Run build command in the frontend directory using bash
 - Serve the built files from `frontend/dist/`
 - Handle client-side routing with SPA fallback
 
