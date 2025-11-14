@@ -131,7 +131,7 @@ The `vercel.json` file in the root directory configures:
 
 ```json
 {
-  "buildCommand": "npx vite build --config ./frontend/vite.config.ts --root ./frontend",
+  "buildCommand": "cd frontend; npx vite build",
   "outputDirectory": "frontend/dist",
   "installCommand": "npm install",
   "framework": null,
@@ -146,7 +146,7 @@ The `vercel.json` file in the root directory configures:
 
 This tells Vercel:
 - Install dependencies in the root directory
-- Run vite build with specified config and root directory
+- Change to frontend directory and run vite build
 - Serve the built files from `frontend/dist/`
 - Handle client-side routing with SPA fallback
 

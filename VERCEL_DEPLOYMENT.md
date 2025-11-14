@@ -38,7 +38,7 @@ The `vercel.json` file handles these settings automatically:
 
 ```json
 {
-  "buildCommand": "npx vite build --config ./frontend/vite.config.ts --root ./frontend",
+  "buildCommand": "cd frontend; npx vite build",
   "outputDirectory": "frontend/dist",
   "installCommand": "npm install",
   "framework": null,
