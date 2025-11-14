@@ -15,6 +15,15 @@ export default defineConfig({
         if (warning.code === 'CIRCULAR_DEPENDENCY') return;
         warn(warning);
       },
+      plugins: [
+        {
+          name: 'rollup-skip-native',
+          buildStart() {
+            // Set environment variable at build start
+            process.env.ROLLUP_SKIP_NATIVE = 'true';
+          }
+        }
+      ]
     },
   },
   // Force rollup to skip native binaries
