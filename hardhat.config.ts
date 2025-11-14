@@ -60,6 +60,10 @@ const config: HardhatUserConfig = {
       },
       chainId: 11155111,
       url: `https://sepolia.infura.io/v3/${INFURA_API_KEY}`,
+      timeout: 60000,
+      httpHeaders: {
+        'User-Agent': 'hardhat/2.27.0',
+      },
     },
   },
   paths: {
