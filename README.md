@@ -131,7 +131,7 @@ The `vercel.json` file in the root directory configures:
 
 ```json
 {
-  "buildCommand": "bash -c 'cd frontend && npm run build'",
+  "buildCommand": "bash -c 'cd frontend && npx vite build'",
   "outputDirectory": "frontend/dist",
   "installCommand": "npm install",
   "framework": null,
