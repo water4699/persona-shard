@@ -47,13 +47,23 @@ The `frontend/package.json` includes rollup overrides to fix native binary issue
 }
 ```
 
-#### Advanced Configuration
-The `vercel.json` file handles these settings automatically:
+#### Monorepo Configuration
 
+For monorepo setups, we use separate `vercel.json` files:
+
+**Root `vercel.json`:**
 ```json
 {
-  "buildCommand": "cd ./frontend && npm install && npx vite build",
-  "outputDirectory": "frontend/dist",
+  "installCommand": "npm install",
+  "framework": null
+}
+```
+
+**Frontend `vercel.json` (in `frontend/` directory):**
+```json
+{
+  "buildCommand": "npm install && npx vite build",
+  "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": null,
   "rewrites": [

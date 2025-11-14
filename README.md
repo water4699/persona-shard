@@ -127,12 +127,21 @@ To use a custom domain:
 
 #### Build Configuration Details
 
-The `vercel.json` file in the root directory configures:
+For this monorepo setup, we use separate `vercel.json` files:
 
+**Root `vercel.json`:**
 ```json
 {
-  "buildCommand": "cd ./frontend && npm install && npx vite build",
-  "outputDirectory": "frontend/dist",
+  "installCommand": "npm install",
+  "framework": null
+}
+```
+
+**Frontend `vercel.json` (in `frontend/` directory):**
+```json
+{
+  "buildCommand": "npm install && npx vite build",
+  "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": null,
   "rewrites": [
@@ -145,8 +154,9 @@ The `vercel.json` file in the root directory configures:
 ```
 
 This tells Vercel:
-- Install dependencies in the root directory
-- Change to frontend directory and run vite build
+- Install Hardhat dependencies in the root directory
+- Switch to frontend directory for React app build
+- Install frontend dependencies and build with Vite
 - Serve the built files from `frontend/dist/`
 - Handle client-side routing with SPA fallback
 
