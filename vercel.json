@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd ./frontend && npm install && npx vite build",
+  "buildCommand": "ls -la && cd frontend && pwd && npm install && npx vite build",
   "outputDirectory": "frontend/dist",
   "installCommand": "npm install",
   "framework": null,
