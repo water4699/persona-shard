@@ -61,7 +61,8 @@
     "ts-node": "^10.9.2",
     "typechain": "^8.3.2",
     "typescript": "^5.8.3",
-    "vite": "^7.1.6"
+    "vite": "^7.1.6",
+    "@vitejs/plugin-react": "^5.0.2"
   },
   "scripts": {
     "clean": "rimraf ./fhevmTemp ./artifacts ./cache ./coverage ./types ./coverage.json ./dist && npm run typechain",
