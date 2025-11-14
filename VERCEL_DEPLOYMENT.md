@@ -33,12 +33,26 @@ This guide provides step-by-step instructions for deploying the Persona Shard FH
 - **Output Directory**: Leave empty (configured in vercel.json)
 - **Install Command**: Leave empty (configured in vercel.json)
 
+#### Frontend Package.json Configuration
+
+The `frontend/package.json` includes rollup overrides to fix native binary issues:
+
+```json
+{
+  "overrides": {
+    "rollup": {
+      "@rollup/rollup-linux-x64-gnu": "npm:@rollup/rollup-linux-x64-musl@4.34.8"
+    }
+  }
+}
+```
+
 #### Advanced Configuration
 The `vercel.json` file handles these settings automatically:
 
 ```json
 {
-  "buildCommand": "cd frontend; npx vite build",
+  "buildCommand": "cd ./frontend && npm install && npx vite build",
   "outputDirectory": "frontend/dist",
   "installCommand": "npm install",
   "framework": null,
